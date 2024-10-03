@@ -1,0 +1,93 @@
+﻿<Tasks>
+
+1.Make researches about what I need to learn or know more (more than 1hr 30min)
+    a. then make a UX flowchart
+    b. + Statemachine Diagram
+
+2. Basic sprite settings
+    a. Set up player object with Rigidbody2D, Collision 2D and Animator (20 min)
+    b. Make some floor(blocks) or obstacles, NPC, etc.(35 min)
+        & add some components like Collision 2D (20 min)
+
+
+3. Sprite sheets animations
+    a. Priority: transitions between Bouncing(idle) and walking&jumping (36 min)
+    b. Make sure Animator states are triggered correctly by velocity (30 min)
+    c. Player animation: flipping transition between right&left arrow keys (50 min)
+    d. check transitions and tweak animation speed (30 min)
+
+4. Player Movement and Control
+    a. add horizontal movement with speed limits (30 min)
+    b. adjust jump & detailed movements so that player doesn’t slide or fly away from the screen (30 min)
+    c. Make sure player changes direction based on input (20 min)
+    d. Test play physics & adjust forces like jumping heights, gravity...(30 min)
+
+5. Player Interaction with Coins
+    a. Priority: Create coin objects with collision triggers (30 min)
+    b. Make sure that PlayerScript destroys coin objects upon collision (30 min)
+    c. Test overall collision detection (30 min)
+
+
+0927: Research day
+<Notes after making some researches>
+1. Reason for using Sprite sheets: to reduce batches (especially important in mobile game or apps)
+2. How to check the number of the batches: Statics panel -> "Graphics"
+3. Spliting the player GO, obstacles, background, etc: "Sorting layer" in inspector panel
+4. Animator == Animation controller
+5. "Avatar" in animator panel: someting related to 3D. (Not necessary in 2D)
+6. How to adjust sprite sheets animation in a detailed way
+    : "Windows"(on the upper side of the screen) -> Animation panel
+7. How to turn on/off loop animation: click the animation controller -> 'Loop time' Checkbox on the inspector panel
+8. How to speed up/down (animation) : Click Animator panel(somthing looks like a block coding) -> inspector panel -> 'Speed'
+
+
+
+0928
+Task: Ideation & making UX flowchart
+    Thinking of making something like Supermario (Coins... blocks...)
+    Planning to design GOs like a pixel art animations but not really sure wheter it would be possible
+        -> Keep researching about how could I make pixel graphics in photoshop but doesn't really work for some reason
+        -> decided to modify some license-free pixel art icons in clipstudio(illustration software) and use them as GO
+    Made player character & added Rigidbody2D setting
+    Made some square shaped blocks that player could step on
+    Made 2 NPCs and put them on the ending point of the aligned blocks so that they could be look like an ending point
+
+
+0929
+Task: Making sprite sheets animations
+    Going through the sprite sheets tutorial again (https://learn.unity.com/tutorial/introduction-to-sprite-animations#5fa66921edbc2a0020bcaae3)
+    Made some more researches found out some Korean articles about sprite sheets (https://mekain80.tistory.com/91)
+        + learned how to make the player filp depending on the direction of the arrow keys
+    Basic animation settings: slicing the animation PNG image, naming each frame, etc
+    Adjusting Bouncing animations of Player & NPCs because much slower movement looks better for them while coin spinning animations are better when they are super fast
+
+
+0930
+Task: Player Movement and Control
+    googling how can I set up some detailed variables like MaxSpeed and JumpHeight
+    just realized that there are so many gravity&friction-related variables that I could make or modify
+        -> Doing some experiments with Physics material 2D: maybe I could apply this to the blocks(floor)
+    started modifying some physics related to the Player GO: Linear drag, gravity, etc
+    Trying to find out the best combination of physics variables: endless testplay
+    Keep Testing basic movement and jumping mechanics
+    Went through the sprite sheets tutorial again
+        * Just wanted to 100% understand how to blend animations since I need animation transition between PlayerBounce(idle) and PlayerWalk(Walking&Jumping)
+
+
+1001
+Task: modifying PlayerScript
+    Referring some youtube channels & videos that describing player GO movements
+        also went through some of the videos in "Playlist for this class" (https://youtube.com/playlist?list=PLWKkYE6PraUKj77aOOnkRiXKyJRm6y4Ev&si=HlYNGbmb4IlQsjR2)
+    Trying to use what I learned till last week while referring them
+        e.g.: one of the Korean gamedeveloper youtube channel that I referred explained that we can use "(SetActive(false))" to make GO disappear
+              but I guess I could use "Destroy(collision.gameObject);" instead
+    Just Learned that I could use some mathmatic logics in the script
+        -> so I used absolute value ("Mathf.Abs") when making animation transition
+
+
+1002-1003
+Task: Player Interaction with Coins & tweaking detailed movements
+    Making all 3 coins disappear when player hit them
+    Adjusting some speed limits regarding player's horizontal movements (MaxSpeed)
+        + and also jumping movement (MaxHeight) 
+    Endless testplay again
