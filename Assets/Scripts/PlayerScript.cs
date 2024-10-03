@@ -36,7 +36,7 @@ public class PlayerScritpt : MonoBehaviour
             SpriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == -1;
 
         //Animation transition between PlayerBounce(idle) and PlayerWalk(walking)
-        if (Mathf.Abs (rigid.velocity.x) < 0.3 )
+        if (Mathf.Abs (rigid.velocity.x) < 0.5 )
             ani.SetBool("PlayerWalk", false);
         else
             ani.SetBool("PlayerWalk", true);
